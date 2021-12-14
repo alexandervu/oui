@@ -1,0 +1,44 @@
+{
+  "name": "oui",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/oui.umd.js",
+  "module": "./dist/oui.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/oui.es.js",
+      "require": "./dist/oui.umd.js"
+    }
+  },
+  "unpkg": "./dist/oui.umd.js",
+  "jsdelivr": "./dist/oui.umd.js",
+  "scripts": {
+    "lib:analyze": "vite build --config analyze.config.js",
+    "lib:build": "vite build",
+    "lib:publish": "npm publish --access public",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "keywords": ["vue", "ui", "oui"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.0.0",
+    "@vue/compiler-sfc": "^3.2.26",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.5",
+    "postcss-nested": "^5.0.6",
+    "rollup-plugin-visualizer": "^5.5.2",
+    "vite": "^2.7.2",
+    "vitepress": "^0.20.5"
+  },
+  "dependencies": {
+    "mitt": "^3.0.0",
+    "tabbable": "^5.2.1",
+    "tippy.js": "^6.3.7"
+  }
+}
