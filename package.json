@@ -21,15 +21,22 @@
     "lib:publish": "npm publish --access public",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "docs:serve": "vitepress serve docs",
+    "lint": "eslint --ext .js,.vue src"
   },
-  "keywords": ["vue", "ui", "oui"],
+  "keywords": [
+    "vue",
+    "ui",
+    "oui"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
     "@vue/compiler-sfc": "^3.2.26",
     "autoprefixer": "^10.4.0",
+    "eslint": "^8.4.1",
+    "eslint-plugin-vue": "^8.2.0",
     "postcss": "^8.4.5",
     "postcss-nested": "^5.0.6",
     "rollup-plugin-visualizer": "^5.5.2",

@@ -38,8 +38,10 @@
 </script>
 
 <template>
-  <div class="oui-box"
-    :class="classProps">
-    <slot></slot>
+  <div
+    class="oui-box"
+    :class="classProps"
+  >
+    <slot />
   </div>
 </template>
