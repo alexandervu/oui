@@ -1,8 +1,8 @@
 # OUI
 
-[![npm (scoped)](https://img.shields.io/npm/v/@alexandervu/oui)](https://www.npmjs.com/package/@alexandervu/oui)
-[![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@alexandervu/oui)](https://bundlephobia.com/result?p=@alexandervu/oui@latest)
-[![NPM](https://img.shields.io/npm/l/@alexandervu/oui)](https://github.com/alexandervu/oui/blob/main/LICENSE)
+[![npm (scoped)](https://img.shields.io/npm/v/@studioalex/oui)](https://www.npmjs.com/package/@studioalex/oui)
+[![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@studioalex/oui)](https://bundlephobia.com/result?p=@studioalex/oui@latest)
+[![NPM](https://img.shields.io/npm/l/@studioalex/oui)](https://github.com/studioalex/oui/blob/main/LICENSE)
 
 A lightweight Vue 3 component library.
 
@@ -13,57 +13,63 @@ When you are starting a new prototype you want to be able to develop features fa
 First install the library using your prefered package manager
 
 ```bash
-npm install @alexandervu/oui
+npm install @studioalex/oui
 ```
 
 then you can import the available components like so
 
 ```vue
-import { Box } from '@alexandervu/oui'
+import { Box } from '@studioalex/oui'
 ```
 
 ## Available commands
 
 Here is a list of all available npm commands.
 
-**Starting the dev environment**
-We use Vue Press to hold our component documentation and examples
+**Build the Library**
 
 ```bash
-npm run dev
-```
-
-**Building the documentation**
-
-```bash
-npm run build
-```
-
-**Serving the documentation**
-
-```bash
-npm run serve
-```
-
-**Building the library bundles**
-
-```bash
-npm run build:library
+npm run lib:build
 ```
 
 **Analyzing bundle sizes with [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer)**
 
 ```bash
-npm run analyze
+npm run lib:analyze
 ```
 
-**Lint all files**
+**Lint the Library**
 
 ```bash
 npm run lint
 ```
 
-**Format all files**
+**Test the Library**
+
 ```bash
-npm run format
+npm run test
+```
+
+**Publish the Library**
+
+```bash
+npm run lib:publish
+```
+
+**Developing the documentation**
+
+```bash
+npm run docs:dev
+```
+
+**Building the documentation**
+
+```bash
+npm run docs:build
+```
+
+**Serving the documentation**
+
+```bash
+npm run docs:serve
 ```

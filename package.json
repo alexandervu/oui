@@ -1,6 +1,6 @@
 {
   "name": "oui",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A lightweight Vue 3 component library",
   "files": [
     "dist"
