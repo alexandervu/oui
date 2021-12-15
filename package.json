@@ -1,7 +1,7 @@
 {
   "name": "oui",
   "version": "1.0.0",
-  "description": "",
+  "description": "A lightweight Vue 3 component library",
   "files": [
     "dist"
   ],
@@ -22,21 +22,27 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "keywords": [
     "vue",
     "ui",
     "oui"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Alexander Vu <alexander.vu.tuyet@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
+    "@babel/preset-env": "^7.16.5",
     "@vitejs/plugin-vue": "^2.0.0",
     "@vue/compiler-sfc": "^3.2.26",
+    "@vue/test-utils": "^2.0.0-rc.17",
+    "@vue/vue3-jest": "^27.0.0-alpha.4",
     "autoprefixer": "^10.4.0",
+    "babel-jest": "^27.4.5",
     "eslint": "^8.4.1",
     "eslint-plugin-vue": "^8.2.0",
+    "jest": "^27.4.5",
     "postcss": "^8.4.5",
     "postcss-nested": "^5.0.6",
     "rollup-plugin-visualizer": "^5.5.2",
