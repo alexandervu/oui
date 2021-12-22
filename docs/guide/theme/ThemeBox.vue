@@ -24,10 +24,15 @@
     <slot></slot>
   </div>
 </template>
-<script setup>
-  import { ref } from 'vue'
-  const doc = document.firstElementChild
-  const selection = ref(doc.getAttribute('color-scheme') || 'default')
+<script lang="ts" setup>
+  import { ref, onMounted } from 'vue'
+  let doc = null
+  const selection = ref('default')
+
+  onMounted(() => {
+    doc = document.firstElementChild
+    selection.value = doc?.getAttribute('color-scheme') || 'default'
+  })
 
   function onChange() {
     doc.setAttribute('color-scheme', selection.value)

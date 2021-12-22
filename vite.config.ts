@@ -1,5 +1,6 @@
 import { visualizer } from 'rollup-plugin-visualizer'
 import vue from '@vitejs/plugin-vue'
+import * as path from 'path'
 
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
@@ -9,13 +10,13 @@ export default defineConfig({
   plugins: [
     vue(),
     visualizer({
-      open: true,
-      title: 'OUI Bundle Visualizer'
+      open: false,
+      title: 'Studio Alex - OUI Bundle Visualizer'
     })
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.js'),
+      entry: resolve(__dirname, 'src/oui.esm.ts'),
       name: 'oui'
     },
     rollupOptions: {
@@ -27,7 +28,8 @@ export default defineConfig({
         // for externalized deps
         globals: {
           vue: 'Vue'
-        }
+        },
+        exports: 'named'
       }
     }
   }

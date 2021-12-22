@@ -1,11 +1,10 @@
 module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    es6: true,
-    node: true,
-    jest: false
+  parserOptions: {
+    parser: '@typescript-eslint/parser'
   },
+  plugins: [
+    '@typescript-eslint'
+  ],
   extends: [
     'plugin:vue/vue3-strongly-recommended'
   ]

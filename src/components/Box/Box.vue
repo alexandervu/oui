@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
   import { toRefs, computed } from "vue"
 
   const props = defineProps({
@@ -17,9 +17,8 @@
   })
 
   const { size, shadow, surface } = toRefs(props)
-
   const classProps = computed(() => {
-    const result = []
+    const result = ['oui-box']
 
     if (['small', 'medium', 'large', 'extralarge'].includes(size.value)) {
       result.push(`oui-box--${size.value}`)
@@ -38,10 +37,7 @@
 </script>
 
 <template>
-  <div
-    class="oui-box"
-    :class="classProps"
-  >
+  <div :className="classProps">
     <slot />
   </div>
 </template>
