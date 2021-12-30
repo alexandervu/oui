@@ -1,0 +1,58 @@
+.oui-card {
+  position: relative;
+  width: 90%;
+  max-width: 300px;
+  z-index: 1;
+
+  &__surface {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+    border-radius: 16px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    text-align: center;
+    color: var(--text-primary);
+    background-color: var(--surface-2th);
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      top: -3px;
+      left: -3px;
+      bottom: -3px;
+      right: -3px;
+      z-index: -1;
+      border-radius: 16px;
+      background-image: linear-gradient(
+        135deg,
+        var(--surface-4th),
+        var(--surface-3th) 20%,
+        var(--surface-3th) 30%,
+        var(--surface-4th) 100%
+      );
+    }
+
+    &--brand {
+      background-color: var(--surface-2th);
+      background-image: linear-gradient(
+        135deg,
+        var(--surface-2th-60),
+        var(--surface-2th-90) 15%,
+        var(--surface-2th) 20%,
+        var(--surface-2th) 100%
+      );
+      &:before {
+        background-image: linear-gradient(
+          135deg,
+          var(--oui-color),
+          hsl(var(--oui-hue) var(--oui-saturation) calc(var(--oui-lightness) / 3)) 20%,
+          var(--surface-1th) 30%,
+          var(--surface-3th) 100%
+        );
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
  * This can be used as an example
  * https://github.com/vuejs/vitepress/blob/master/docs/.vitepress/config.js
  */
- module.exports = {
+module.exports = {
   lang: 'en-US',
   title: 'OUI',
   description: 'A lightweight Vue 3 component library',
@@ -38,6 +38,8 @@
 
 function getComponents() {
   return [
-    { text: 'Box', link: '/guide/box/box' }
+    { text: 'Box', link: '/guide/box/box' },
+    { text: 'Card', link: '/guide/card/card' },
+    { text: 'Switch', link: '/guide/switch/switch' }
   ]
 }

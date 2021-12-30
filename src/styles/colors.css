@@ -5,15 +5,19 @@ html {
   --oui-lightness: 50%;
 
   /* light */
-  --oui-light: hsl(
-    var(--oui-hue) var(--oui-saturation) var(--oui-lightness)
-  );
+  --oui-light: hsl(var(--oui-hue) var(--oui-saturation) var(--oui-lightness));
   --text-primary-light: hsl(var(--oui-hue) var(--oui-saturation) 10%);
   --text-secondary-light: hsl(var(--oui-hue) 30% 30%);
   --surface1-light: hsl(var(--oui-hue) 25% 90%);
   --surface2-light: hsl(var(--oui-hue) 20% 99%);
   --surface3-light: hsl(var(--oui-hue) 20% 92%);
   --surface4-light: hsl(var(--oui-hue) 20% 85%);
+  @each $alpha in 10, 20, 30, 40, 50, 60, 70, 80, 90 {
+    --surface1-light-$(alpha): hsla(var(--oui-hue), 25% 90%, 0.$(alpha));
+    --surface2-light-$(alpha): hsla(var(--oui-hue), 20% 90%, 0.$(alpha));
+    --surface3-light-$(alpha): hsla(var(--oui-hue), 20% 92%, 0.$(alpha));
+    --surface4-light-$(alpha): hsla(var(--oui-hue), 20% 85%, 0.$(alpha));
+  }
   --surface-shadow-light: var(--oui-hue) 10% 20%;
   --shadow-strength-light: 0.02;
 
@@ -28,6 +32,12 @@ html {
   --surface2-dark: hsl(var(--oui-hue) 10% 15%);
   --surface3-dark: hsl(var(--oui-hue) 5% 20%);
   --surface4-dark: hsl(var(--oui-hue) 5% 25%);
+  @each $alpha in 10, 20, 30, 40, 50, 60, 70, 80, 90 {
+    --surface1-dark-$(alpha): hsla(var(--oui-hue), 10%, 10%, 0.$(alpha));
+    --surface2-dark-$(alpha): hsla(var(--oui-hue), 10%, 15%, 0.$(alpha));
+    --surface3-dark-$(alpha): hsla(var(--oui-hue), 5%, 20%, 0.$(alpha));
+    --surface4-dark-$(alpha): hsla(var(--oui-hue), 5%, 25%, 0.$(alpha));
+  }
   --surface-shadow-dark: var(--oui-hue) 50% 3%;
   --shadow-strength-dark: 0.8;
 
@@ -42,6 +52,12 @@ html {
   --surface2-dim: hsl(var(--oui-hue) 10% 25%);
   --surface3-dim: hsl(var(--oui-hue) 5% 30%);
   --surface4-dim: hsl(var(--oui-hue) 5% 35%);
+  @each $alpha in 10, 20, 30, 40, 50, 60, 70, 80, 90 {
+    --surface1-dim-$(alpha): hsla(var(--oui-hue), 10%, 20%, 0.$(alpha));
+    --surface2-dim-$(alpha): hsla(var(--oui-hue), 10%, 25%, 0.$(alpha));
+    --surface3-dim-$(alpha): hsla(var(--oui-hue), 5%, 30%, 0.$(alpha));
+    --surface4-dim-$(alpha): hsla(var(--oui-hue), 5%, 35%, 0.$(alpha));
+  }
   --surface-shadow-dim: var(--oui-hue) 30% 13%;
   --shadow-strength-dim: 0.2;
 }
@@ -55,8 +71,16 @@ html {
   --text-secondary: var(--text-secondary-light);
   --surface-primary: var(--surface1-light);
   --surface-secondary: var(--surface2-light);
+  --surface-1th: var(--surface1-light);
+  --surface-2th: var(--surface2-light);
   --surface-3th: var(--surface3-light);
   --surface-4th: var(--surface4-light);
+  @each $alpha in 10, 20, 30, 40, 50, 60, 70, 80, 90 {
+    --surface-1th-$(alpha): var(--surface1-light-$(alpha));
+    --surface-2th-$(alpha): var(--surface2-light-$(alpha));
+    --surface-3th-$(alpha): var(--surface3-light-$(alpha));
+    --surface-4th-$(alpha): var(--surface4-light-$(alpha));
+  }
   --surface-shadow: var(--surface-shadow-light);
   --shadow-strength: var(--shadow-strength-light);
 }
@@ -71,8 +95,16 @@ html {
     --text-secondary: var(--text-secondary-light);
     --surface-primary: var(--surface1-light);
     --surface-secondary: var(--surface2-light);
+    --surface-1th: var(--surface1-light);
+    --surface-2th: var(--surface2-light);
     --surface-3th: var(--surface3-light);
     --surface-4th: var(--surface4-light);
+    @each $alpha in 10, 20, 30, 40, 50, 60, 70, 80, 90 {
+      --surface-1th-$(alpha): var(--surface1-light-$(alpha));
+      --surface-2th-$(alpha): var(--surface2-light-$(alpha));
+      --surface-3th-$(alpha): var(--surface3-light-$(alpha));
+      --surface-4th-$(alpha): var(--surface4-light-$(alpha));
+    }
     --surface-shadow: var(--surface-shadow-light);
     --shadow-strength: var(--shadow-strength-light);
   }
@@ -90,6 +122,12 @@ html {
   --surface-2th: var(--surface2-light);
   --surface-3th: var(--surface3-light);
   --surface-4th: var(--surface4-light);
+  @each $alpha in 10, 20, 30, 40, 50, 60, 70, 80, 90 {
+    --surface-1th-$(alpha): var(--surface1-light-$(alpha));
+    --surface-2th-$(alpha): var(--surface2-light-$(alpha));
+    --surface-3th-$(alpha): var(--surface3-light-$(alpha));
+    --surface-4th-$(alpha): var(--surface4-light-$(alpha));
+  }
   --surface-shadow: var(--surface-shadow-light);
   --shadow-strength: var(--shadow-strength-light);
 }
@@ -106,6 +144,12 @@ html {
   --surface-2th: var(--surface2-dark);
   --surface-3th: var(--surface3-dark);
   --surface-4th: var(--surface4-dark);
+  @each $alpha in 10, 20, 30, 40, 50, 60, 70, 80, 90 {
+    --surface-1th-$(alpha): var(--surface1-dark-$(alpha));
+    --surface-2th-$(alpha): var(--surface2-dark-$(alpha));
+    --surface-3th-$(alpha): var(--surface3-dark-$(alpha));
+    --surface-4th-$(alpha): var(--surface4-dark-$(alpha));
+  }
   --surface-shadow: var(--surface-shadow-dark);
   --shadow-strength: var(--shadow-strength-dark);
 }
@@ -122,6 +166,12 @@ html {
   --surface-2th: var(--surface2-dim);
   --surface-3th: var(--surface3-dim);
   --surface-4th: var(--surface4-dim);
+  @each $alpha in 10, 20, 30, 40, 50, 60, 70, 80, 90 {
+    --surface-1th-$(alpha): var(--surface1-dim-$(alpha));
+    --surface-2th-$(alpha): var(--surface2-dim-$(alpha));
+    --surface-3th-$(alpha): var(--surface3-dim-$(alpha));
+    --surface-4th-$(alpha): var(--surface4-dim-$(alpha));
+  }
   --surface-shadow: var(--surface-shadow-dim);
   --shadow-strength: var(--shadow-strength-dim);
 }
