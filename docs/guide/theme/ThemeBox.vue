@@ -3,40 +3,48 @@
     <header>
       <h3>Scheme</h3>
       <form id="theme-switcher">
-        <div>
-          <input checked type="radio" id="default" name="theme" value="default" v-model="selection" @change="onChange">
-          <label for="default">Default</label>
-        </div>
-        <div>
-          <input type="radio" id="light" name="theme" value="light" v-model="selection" @change="onChange">
-          <label for="light">Light</label>
-        </div>
-        <div>
-          <input type="radio" id="dark" name="theme" value="dark" v-model="selection" @change="onChange">
-          <label for="dark">Dark</label>
-        </div>
-        <div>
-          <input type="radio" id="dim" name="theme" value="dim" v-model="selection" @change="onChange">
-          <label for="dim">Dim</label>
-        </div>
+        <OuiSwitch
+          name="theme"
+          align="horizontal"
+          :items="themeItems"
+          :checked="selection"
+          @change="onChange"
+        />
       </form>
     </header>
     <slot></slot>
   </div>
 </template>
 <script lang="ts" setup>
-  import { ref, onMounted } from 'vue'
-  let doc = null
-  const selection = ref('default')
+import { ref, onMounted } from 'vue'
+import { OuiSwitch } from '../../../src/oui.esm.ts'
 
-  onMounted(() => {
-    doc = document.firstElementChild
-    selection.value = doc?.getAttribute('color-scheme') || 'default'
-  })
+let doc = null
+const selection = ref('light')
+const themeItems = ref([
+  {
+    title: 'Light',
+    value: 'light'
+  },
+  {
+    title: 'Dark',
+    value: 'dark'
+  },
+  {
+    title: 'Dim',
+    value: 'dim'
+  }
+])
 
-  function onChange() {
-    doc.setAttribute('color-scheme', selection.value)
-  }  
+onMounted(() => {
+  doc = document.firstElementChild
+  selection.value = doc?.getAttribute('color-scheme') || 'light'
+})
+
+function onChange(value) {
+  console.log(':::', value)
+  doc.setAttribute('color-scheme', value)
+}  
 </script>
 <style lang="postcss">
 .theme-box {
@@ -64,7 +72,7 @@
   & > div {
     display: inline-flex;
     align-items: center;
-    gap: .75ch;
+    gap: 0.75ch;
   }
 }
 

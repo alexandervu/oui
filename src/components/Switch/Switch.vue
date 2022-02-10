@@ -60,23 +60,23 @@ const valueChaged = (element) => {
 }
 
 /**
- * When label size change cause of window or element resize, resize the slider.
- * To do so, find the checked radio element and resize the slider on his new shape.
- */
-const elementResizeObserver = new ResizeObserver(entries => {
-  sliderElement.classList.remove('slider--transition')
-  const index = items.value.findIndex(element => element.value === radioValue.value)
-  setSliderPosition(`switch-${name.value}-item-${index}`)
-  sliderElement.classList.add('slider--transition')
-})
-
-/**
  * On mounting initialize the component by
  *   - getting slider element
  *   - find the index number of checked radio element
  *   - set the slider position and size on checked radio element label
  */
 onMounted(() => {
+  /**
+   * When label size change cause of window or element resize, resize the slider.
+   * To do so, find the checked radio element and resize the slider on his new shape.
+   */
+  const elementResizeObserver = new ResizeObserver(entries => {
+    sliderElement.classList.remove('slider--transition')
+    const index = items.value.findIndex(element => element.value === radioValue.value)
+    setSliderPosition(`switch-${name.value}-item-${index}`)
+    sliderElement.classList.add('slider--transition')
+  })
+
   sliderElement = document.getElementById(`slider-${name.value}`)
   // find checked element and set slider
   const index = items.value.findIndex(element => element.value === checked.value)
@@ -120,7 +120,7 @@ function setSliderPosition(selectedElementId) {
         :id="`switch-${name}-item-${index.toString()}`"
         :for="`switch-${name}-input-${index.toString()}`"
       >
-        <span>{{ item.title }}</span>
+        <span class="oui-switch__title">{{ item.title }}</span>
       </label>
     </template>
     <span :id="`slider-${name}`" class="slider slider--transition"></span>
